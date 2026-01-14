@@ -33,7 +33,7 @@ export function TokenControl() {
           <span className="sr-only">Theme Settings</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="start" className="w-72">
+      <DropdownMenuContent align="end" className="w-72">
         <DropdownMenuGroup>
           <DropdownMenuLabel className="flex items-center justify-between">
             <span>Theme Color</span>
@@ -79,21 +79,21 @@ export function TokenControl() {
           <div className="px-2 pb-2">
             <div className="grid grid-cols-2 gap-1.5">
               {fonts.map((font) => (
-                <button
+                <Button
                   key={font.id}
                   onClick={() => setFontId(font.id)}
-                  className={cn(
-                    "flex items-center justify-center px-2 py-1.5 text-xs rounded-md transition-all",
-                    "ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-                    "border hover:bg-accent",
-                    customization.fontId === font.id
-                      ? "border-primary bg-primary/10 text-primary"
-                      : "border-border"
-                  )}
                   style={{ fontFamily: font.fontFamily }}
+                  className={cn(
+                    "flex-1 flex items-center justify-center p-1.5 bg-primary/50",
+                    "ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                    "border ",
+                    customization.fontId === font.id
+                      ? "border-primary "
+                      : "border-border bg-primary/40"
+                  )}
                 >
                   {font.name}
-                </button>
+                </Button>
               ))}
             </div>
           </div>
@@ -111,16 +111,16 @@ export function TokenControl() {
           <div className="px-2 pb-2">
             <div className="flex gap-1.5">
               {radii.map((radius) => (
-                <button
+                <Button
                   key={radius.id}
                   onClick={() => setRadiusId(radius.id)}
                   className={cn(
-                    "flex-1 flex items-center justify-center p-1.5 transition-all",
+                    "flex-1 flex items-center justify-center p-1.5 bg-primary/50",
                     "ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-                    "border hover:bg-accent",
+                    "border ",
                     customization.radiusId === radius.id
-                      ? "border-primary bg-primary/10"
-                      : "border-border"
+                      ? "border-primary "
+                      : "border-border bg-primary/10"
                   )}
                   style={{ borderRadius: radius.value }}
                   title={radius.name}
@@ -132,7 +132,7 @@ export function TokenControl() {
                     )}
                     style={{ borderRadius: radius.value }}
                   />
-                </button>
+                </Button>
               ))}
             </div>
           </div>

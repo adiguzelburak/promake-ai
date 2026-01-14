@@ -31,18 +31,6 @@ export const themeColors: ThemeColor[] = [
     primaryForeground: "oklch(0.985 0 0)",
   },
   {
-    id: "slate",
-    name: "Slate",
-    primary: "oklch(0.205 0.015 260)",
-    primaryForeground: "oklch(0.985 0 0)",
-  },
-  {
-    id: "stone",
-    name: "Stone",
-    primary: "oklch(0.216 0.006 56.043)",
-    primaryForeground: "oklch(0.985 0 0)",
-  },
-  {
     id: "red",
     name: "Red",
     primary: "oklch(0.577 0.245 27.325)",
@@ -130,7 +118,6 @@ export const defaultThemeCustomization: ThemeCustomization = {
   spacingId: "default",
 };
 
-// Helper fonksiyonlar
 export function getThemeColor(id: string): ThemeColor | undefined {
   return themeColors.find((c) => c.id === id);
 }

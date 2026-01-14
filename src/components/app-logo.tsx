@@ -36,8 +36,8 @@ export function AppLogo() {
           y2="19.6791"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#DA738C"></stop>
-          <stop offset="1" stop-color="#411E93"></stop>
+          <stop stopColor="#DA738C"></stop>
+          <stop offset="1" stopColor="#411E93"></stop>
         </linearGradient>
       </defs>
     </svg>
