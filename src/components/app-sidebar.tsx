@@ -2,7 +2,6 @@ import { NavMain } from "@/components/nav-main";
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuItem,
@@ -10,7 +9,6 @@ import {
 } from "@/components/ui/sidebar";
 import * as React from "react";
 import { AppLogo } from "./app-logo";
-import { ModeToggle } from "./mode-toggle";
 
 // This is sample data.
 const data = {
@@ -74,11 +72,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarContent>
         <NavMain items={data.navMain} />
       </SidebarContent>
-      <SidebarFooter>
-        <div className="p-1">
-          <ModeToggle />
-        </div>
-      </SidebarFooter>
       <SidebarRail />
     </Sidebar>
   );
