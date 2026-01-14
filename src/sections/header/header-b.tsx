@@ -9,19 +9,43 @@ export function HeaderB() {
             <span className="text-lg font-bold">B</span>
           </div>
           <div>
-            <span className="text-lg font-bold block leading-tight">BrandName</span>
+            <span className="text-lg font-bold block leading-tight">
+              BrandName
+            </span>
             <span className="text-xs opacity-80">Tagline here</span>
           </div>
         </div>
         <nav className="hidden lg:flex items-center gap-8">
-          <a href="#" className="text-sm font-medium hover:opacity-80 transition-opacity">Products</a>
-          <a href="#" className="text-sm font-medium hover:opacity-80 transition-opacity">Solutions</a>
-          <a href="#" className="text-sm font-medium hover:opacity-80 transition-opacity">Resources</a>
-          <a href="#" className="text-sm font-medium hover:opacity-80 transition-opacity">Company</a>
+          <a
+            href="#"
+            className="text-sm font-medium hover:opacity-80 transition-opacity"
+          >
+            Products
+          </a>
+          <a
+            href="#"
+            className="text-sm font-medium hover:opacity-80 transition-opacity"
+          >
+            Solutions
+          </a>
+          <a
+            href="#"
+            className="text-sm font-medium hover:opacity-80 transition-opacity"
+          >
+            Resources
+          </a>
+          <a
+            href="#"
+            className="text-sm font-medium hover:opacity-80 transition-opacity"
+          >
+            Company
+          </a>
         </nav>
         <div className="flex items-center gap-3">
-          <Button variant="secondary" size="sm">Login</Button>
-          <Button variant="outline" size="sm" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+          <Button variant="secondary" size="sm">
+            Login
+          </Button>
+          <Button variant="secondary" size="sm">
             Start Free Trial
           </Button>
         </div>
