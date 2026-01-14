@@ -14,7 +14,6 @@ import {
 
 interface BuilderState {
   sections: SectionInstance[];
-  selectedCategory: SectionCategory | null;
 }
 
 interface BuilderContextType extends BuilderState {
@@ -22,10 +21,6 @@ interface BuilderContextType extends BuilderState {
   removeSection: (instanceId: string) => void;
   moveSection: (instanceId: string, direction: "up" | "down") => void;
   clearSections: () => void;
-
-  setSelectedCategory: (category: SectionCategory | null) => void;
-
-  getSectionComponent: (instanceId: string) => React.ComponentType | null;
 }
 
 const BuilderContext = createContext<BuilderContextType | undefined>(undefined);
@@ -57,7 +52,6 @@ function sortSectionsByCategory(
 export function BuilderProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<BuilderState>({
     sections: [],
-    selectedCategory: null,
   });
 
   const addSection = useCallback((variantId: string) => {
@@ -153,35 +147,12 @@ export function BuilderProvider({ children }: { children: ReactNode }) {
     }));
   }, []);
 
-  const setSelectedCategory = useCallback(
-    (category: SectionCategory | null) => {
-      setState((prev) => ({
-        ...prev,
-        selectedCategory: category,
-      }));
-    },
-    []
-  );
-
-  const getSectionComponent = useCallback(
-    (instanceId: string): React.ComponentType | null => {
-      const instance = state.sections.find((s) => s.id === instanceId);
-      if (!instance) return null;
-
-      const variant = getSectionById(instance.variantId);
-      return variant?.component || null;
-    },
-    [state.sections]
-  );
-
   const value: BuilderContextType = {
     ...state,
     addSection,
     removeSection,
     moveSection,
     clearSections,
-    setSelectedCategory,
-    getSectionComponent,
   };
 
   return (
